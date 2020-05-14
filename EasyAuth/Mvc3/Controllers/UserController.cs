@@ -18,5 +18,12 @@ namespace Mvc1.Controllers
             await HttpContext.SignOutAsync("oidc");
             return;
         }
+
+        [HttpGet("/user/logout-notify")]
+        public async Task LogoutNotify()
+        {
+            await HttpContext.SignOutAsync();
+            return;
+        }
     }
 }

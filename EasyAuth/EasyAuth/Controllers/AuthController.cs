@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using IdentityServer4.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -8,6 +9,12 @@ namespace EasyAuth.Controllers
 {
     public class AuthController : Controller
     {
+        private readonly IIdentityServerInteractionService _interaction;
+        public AuthController(IIdentityServerInteractionService interaction)
+        {
+            _interaction = interaction;
+        }
+
         [Route("/")]
         [Route("auth/login")]
         [HttpGet]
@@ -34,10 +41,14 @@ namespace EasyAuth.Controllers
         }
 
         [HttpGet]
-        public async Task Logout()
+        public async Task<IActionResult> Logout(string logoutId)
         {
-            await HttpContext.SignOutAsync("idsrv");
-            return;
+            var logout = await _interaction.GetLogoutContextAsync(logoutId);
+            string  signoutIframeUrl = logout.SignOutIFrameUrl;
+
+            await HttpContext.SignOutAsync();
+
+            return Redirect(signoutIframeUrl);
         }
     }
 }

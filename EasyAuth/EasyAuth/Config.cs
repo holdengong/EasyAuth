@@ -62,7 +62,8 @@ namespace EasyAuth
                 AllowOfflineAccess = true,
                 RedirectUris = new List<string> { "https://localhost:5003/signin-oidc" },
                 RequireConsent = false, //是否弹出用户同意页面
-                FrontChannelLogoutUri = "https://localhost:5003/user/logout"
+                FrontChannelLogoutUri = "https://localhost:5003/user/logout-notify",
+                FrontChannelLogoutSessionRequired = false
             });
 
             //Hybrid - 混合流模式
@@ -71,10 +72,12 @@ namespace EasyAuth
                 ClientId = "mvc4",
                 ClientSecrets = new List<Secret> { new Secret("secret".Sha256()) },
                 AllowedGrantTypes = GrantTypes.Hybrid,
-                AllowedScopes = new List<string> { "api1","openid" },
+                AllowedScopes = new List<string> { "api1", "openid" },
                 AllowOfflineAccess = true,
                 RedirectUris = new List<string> { "https://localhost:5004/signin-oidc" },
-                RequireConsent = false //是否弹出用户同意页面
+                RequireConsent = false, //是否弹出用户同意页面
+                FrontChannelLogoutUri = "https://localhost:5004/user/logout-notify",
+                FrontChannelLogoutSessionRequired = false
             });
 
             return result;
