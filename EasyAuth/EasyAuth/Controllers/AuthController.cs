@@ -8,6 +8,8 @@ namespace EasyAuth.Controllers
 {
     public class AuthController : Controller
     {
+        [Route("/")]
+        [Route("auth/login")]
         [HttpGet]
         public IActionResult Login()
         {
@@ -15,7 +17,7 @@ namespace EasyAuth.Controllers
         }
 
         [HttpPost]
-        public async Task Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model, [FromQuery]string returnUrl)
         {
             var identity = new ClaimsIdentity("idsrv");
             identity.AddClaim(new Claim("sub", model.Username));
@@ -23,6 +25,18 @@ namespace EasyAuth.Controllers
 
             var principle = new ClaimsPrincipal(identity);
             await HttpContext.SignInAsync("idsrv", principle);
+
+            if (!string.IsNullOrWhiteSpace(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return Redirect("/Secure");
+        }
+
+        [HttpGet]
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync("idsrv");
             return;
         }
     }

@@ -39,7 +39,7 @@ namespace EasyAuth
                 AllowedScopes = new List<string> { "api1" },
                 AccessTokenType = AccessTokenType.Jwt,
                 AccessTokenLifetime = 30,
-                AllowOfflineAccess = true //本模式由于安全原因无法使用refresh_token，这里设置也没用
+                AllowOfflineAccess = true, //本模式由于安全原因无法使用refresh_token，这里设置也没用
             });
 
             //Password - 密码模式，简单的用户名密码授权
@@ -58,10 +58,11 @@ namespace EasyAuth
                 ClientId = "mvc3",
                 ClientSecrets = new List<Secret> { new Secret("secret".Sha256()) },
                 AllowedGrantTypes = GrantTypes.Code,
-                AllowedScopes = new List<string> { "api1" },
+                AllowedScopes = new List<string> { "api1", "openid" },
                 AllowOfflineAccess = true,
-                RedirectUris = new List<string> { "https://localhost:5003/token-callback" },
-                RequireConsent = false //是否弹出用户同意页面
+                RedirectUris = new List<string> { "https://localhost:5003/signin-oidc" },
+                RequireConsent = false, //是否弹出用户同意页面
+                FrontChannelLogoutUri = "https://localhost:5003/user/logout"
             });
 
             //Hybrid - 混合流模式
@@ -72,7 +73,7 @@ namespace EasyAuth
                 AllowedGrantTypes = GrantTypes.Hybrid,
                 AllowedScopes = new List<string> { "api1","openid" },
                 AllowOfflineAccess = true,
-                RedirectUris = new List<string> { "https://localhost:5004/token-callback" },
+                RedirectUris = new List<string> { "https://localhost:5004/signin-oidc" },
                 RequireConsent = false //是否弹出用户同意页面
             });
 

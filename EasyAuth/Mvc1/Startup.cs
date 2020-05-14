@@ -17,7 +17,7 @@ namespace Mvc1
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllersWithViews();
 
             services.AddAuthentication(config =>
             {
@@ -28,10 +28,10 @@ namespace Mvc1
                 .AddOpenIdConnect("oidc", config =>
                 {
                     config.Authority = "https://localhost:5000/";
-                    config.ClientId = "mvc1";
+                    config.ClientId = "mvc3";
                     config.ClientSecret = "secret";
                     config.SaveTokens = true;
-                    config.ResponseType = ResponseTypes.Token;
+                    config.ResponseType = ResponseTypes.Code;
 
                     // configure scope
                     config.Scope.Clear();
@@ -51,10 +51,12 @@ namespace Mvc1
             }
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

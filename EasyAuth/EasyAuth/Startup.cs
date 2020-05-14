@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.Configuration;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +29,14 @@ namespace EasyAuth
         {
             services.AddControllersWithViews();
 
-            services.AddIdentityServer()
+            services.AddIdentityServer(config =>
+            {
+                config.UserInteraction = new UserInteractionOptions
+                {
+                    LoginUrl = "/auth/login",
+                    LogoutUrl = "/auth/logout"
+                };
+            })
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
@@ -58,6 +66,8 @@ namespace EasyAuth
             app.UseRouting();
 
             app.UseIdentityServer();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

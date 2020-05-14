@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAuth", "EasyAuth\EasyAuth.csproj", "{537EDDCB-F937-474C-A5B5-7C347F3B4CEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc1", "Mvc1\Mvc1.csproj", "{28E9D486-CF94-4666-A321-0BA1C848C01B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc3", "Mvc1\Mvc3.csproj", "{28E9D486-CF94-4666-A321-0BA1C848C01B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{6BBB5982-A759-49F8-B255-CC48A32DFBE9}"
 EndProject
