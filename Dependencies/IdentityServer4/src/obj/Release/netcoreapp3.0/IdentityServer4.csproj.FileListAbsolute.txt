@@ -1,0 +1,11 @@
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\bin\Release\netcoreapp3.0\IdentityServer4.deps.json
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\bin\Release\netcoreapp3.0\IdentityServer4.dll
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\bin\Release\netcoreapp3.0\IdentityServer4.pdb
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\bin\Release\netcoreapp3.0\IdentityServer4.xml
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\obj\Release\netcoreapp3.0\IdentityServer4.csprojAssemblyReference.cache
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\obj\Release\netcoreapp3.0\IdentityServer4.sourcelink.json
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\obj\Release\netcoreapp3.0\IdentityServer4.AssemblyInfoInputs.cache
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\obj\Release\netcoreapp3.0\IdentityServer4.AssemblyInfo.cs
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\obj\Release\netcoreapp3.0\IdentityServer4.dll
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\obj\Release\netcoreapp3.0\IdentityServer4.xml
+C:\GitRepository\IdentityServer4\src\IdentityServer4\src\obj\Release\netcoreapp3.0\IdentityServer4.pdb

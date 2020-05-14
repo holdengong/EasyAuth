@@ -3,3 +3,13 @@
 ################################################################################
 
 /EasyAuth/.vs/EasyAuth
+/Dependencies/IdentityServer4/.vs/IdentityServer4
+/Dependencies/IdentityServer4/src/bin
+/Dependencies/IdentityServer4/build/bin/Debug/netcoreapp3.0
+/Dependencies/IdentityServer4/build/obj
+/Dependencies/IdentityServer4/host/bin
+/Dependencies/IdentityServer4/host/obj
+/Dependencies/IdentityServer4/test/IdentityServer.IntegrationTests/bin
+/Dependencies/IdentityServer4/test/IdentityServer.IntegrationTests/obj
+/Dependencies/IdentityServer4/test/IdentityServer.UnitTests/bin
+/Dependencies/IdentityServer4/test/IdentityServer.UnitTests/obj

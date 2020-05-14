@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>IdentityServer4</id>
+    <version>3.0.3-alpha.0.9</version>
+    <authors>Brock Allen,Dominick Baier</authors>
+    <owners>Brock Allen,Dominick Baier</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.jpg</icon>
+    <projectUrl>https://github.com/IdentityServer/IdentityServer4</projectUrl>
+    <description>OpenID Connect and OAuth 2.0 Framework for ASP.NET Core</description>
+    <releaseNotes>https://github.com/IdentityServer/IdentityServer4/releases</releaseNotes>
+    <tags>OAuth2 OAuth 2.0 OpenID Connect Security Identity IdentityServer</tags>
+    <repository type="git" url="https://github.com/IdentityServer/IdentityServer4.git" commit="d2470e01dc79161fd61ffd2d7b358d7ede1280bc" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.0">
+        <dependency id="IdentityModel" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="IdentityServer4.Storage" version="3.0.3-alpha.0.9" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Authentication.OpenIdConnect" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\GitRepository\IdentityServer4\src\IdentityServer4\src\bin\Release\netcoreapp3.0\IdentityServer4.pdb" target="lib\netcoreapp3.0\IdentityServer4.pdb" />
+    <file src="C:\GitRepository\IdentityServer4\src\IdentityServer4\src\bin\Release\netcoreapp3.0\IdentityServer4.dll" target="lib\netcoreapp3.0\IdentityServer4.dll" />
+    <file src="C:\GitRepository\IdentityServer4\src\IdentityServer4\src\bin\Release\netcoreapp3.0\IdentityServer4.xml" target="lib\netcoreapp3.0\IdentityServer4.xml" />
+    <file src="C:\GitRepository\IdentityServer4\icon.jpg" target="icon.jpg" />
+  </files>
+</package>
