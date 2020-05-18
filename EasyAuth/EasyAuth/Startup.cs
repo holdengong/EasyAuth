@@ -42,7 +42,7 @@ namespace EasyAuth
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddDeveloperSigningCredential(true)
                 .AddTestUsers(Config.GetTestUsers())
-                .AddProfileService<DefaultProfileService>()
+                .AddProfileService<TestProfileService>()
                 ;
 
             services.ConfigureApplicationCookie(config =>
@@ -51,6 +51,8 @@ namespace EasyAuth
                 config.LoginPath = "/Auth/Login";
                 config.LogoutPath = "/Auth/Logout";
             });
+
+            services.AddAntiforgery();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

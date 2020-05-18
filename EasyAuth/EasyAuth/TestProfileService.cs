@@ -3,6 +3,7 @@ using IdentityServer4.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace EasyAuth
@@ -11,7 +12,12 @@ namespace EasyAuth
     {
         public Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
-            context.AddRequestedClaims(context.Subject.Claims);
+            var claims = context.Subject.Claims.ToList();
+
+            claims.Add(new Claim("email", "373317270@qq.com"));
+            claims.Add(new Claim("mobile", "18627769747"));
+
+            context.AddRequestedClaims(claims);
 
             return Task.CompletedTask;
         }

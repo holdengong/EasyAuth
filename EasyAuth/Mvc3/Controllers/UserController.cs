@@ -18,9 +18,15 @@ namespace Mvc1.Controllers
             await HttpContext.SignOutAsync("oidc");
             return;
         }
+        [HttpGet("/user/frontchannel-logout")]
+        public async Task FrontchannelLogout()
+        {
+            await HttpContext.SignOutAsync();
+            return;
+        }
 
-        [HttpGet("/user/logout-notify")]
-        public async Task LogoutNotify()
+        [HttpPost("/user/backchannel-logout")]
+        public async Task BackchannelLogout(Dictionary<string, string> dict)
         {
             await HttpContext.SignOutAsync();
             return;

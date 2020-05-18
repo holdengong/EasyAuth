@@ -28,6 +28,7 @@ namespace EasyAuth.Controllers
         {
             var identity = new ClaimsIdentity("idsrv");
             identity.AddClaim(new Claim("sub", model.Username));
+            identity.AddClaim(new Claim("openid", model.Username));
             identity.AddClaim(new Claim("username", model.Username));
 
             var principle = new ClaimsPrincipal(identity);

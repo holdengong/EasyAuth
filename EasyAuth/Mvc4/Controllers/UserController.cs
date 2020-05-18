@@ -19,8 +19,15 @@ namespace Mvc4.Controllers
             return;
         }
 
-        [HttpGet("/user/logout-notify")]
-        public async Task LogoutNotify()
+        [HttpGet("/user/frontchannel-logout")]
+        public async Task FrontchannelLogout()
+        {
+            await HttpContext.SignOutAsync();
+            return;
+        }
+
+        [HttpPost("/user/backchannel-logout")]
+        public async Task BackchannelLogout(Dictionary<string,string> dict)
         {
             await HttpContext.SignOutAsync();
             return;
